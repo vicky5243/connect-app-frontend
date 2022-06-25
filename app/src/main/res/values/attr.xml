@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="dark_theme">
+        <attr name="blackTextColor" format="color" />
+        <attr name="whiteBgColor" format="color"/>
+        <attr name="lightWhiteBgColor" format="color" />
+
+        <attr name="lightBlueColor" format="color" />
+        <attr name="blueColor" format="color" />
+        <attr name="darkBlueColor" format="color" />
+
+        <attr name="veryLightGrayColor" format="color" />
+        <attr name="lightGrayColor" format="color" />
+        <attr name="grayColor" format="color" />
+        <attr name="darkGrayColor" format="color" />
+        <attr name="veryDarkGrayColor" format="color" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.connect.android.ui.profile.edit.EditProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/whiteBgColor"
+        tools:context=".ui.profile.edit.EditProfileFragment">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/edit_profile_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/edit_profile_lpi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:indicatorColor="?attr/darkBlueColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_profile_toolbar"
+            app:trackColor="?attr/lightBlueColor"
+            app:trackThickness="3dp" />
+
+        <ScrollView
+            android:id="@+id/edit_profile_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_profile_lpi">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/edit_profile_image_civ"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:onClick="@{() -> viewModel.navigateToGallery()}" />
+
+                    <TextView
+                        android:id="@+id/edit_profile_change_photo_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.navigateToGallery()}"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="@string/change_profile_photo"
+                        android:textAlignment="center"
+                        android:textColor="?attr/blueColor"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/caps_fullname"
+                        android:textColor="?attr/veryDarkGrayColor"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/edit_profile_name_et"
+                        style="@style/edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:autofillHints="Name"
+                        android:hint="@string/caps_fullname"
+                        android:inputType="text"
+                        android:text="@={viewModel.fullname}" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/caps_username"
+                        android:textColor="?attr/veryDarkGrayColor"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/edit_profile_username_et"
+                        style="@style/edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:autofillHints="Username"
+                        android:hint="@string/caps_username"
+                        android:inputType="text"
+                        android:maxLength="50"
+                        android:text="@={viewModel.username}" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/caps_relationship_status"
+                        android:textColor="?attr/veryDarkGrayColor"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/edit_profile_relationship_et"
+                        style="@style/edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:autofillHints="Relationship Status"
+                        android:hint="@string/caps_relationship_status"
+                        android:inputType="text"
+                        android:maxLength="20"
+                        android:text="@={viewModel.relationshipStatus}" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- Retry Btn show -->
+        <LinearLayout
+            android:id="@+id/edit_profile_container_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/edit_profile_refresh_iv"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:contentDescription="@string/refresh_image_icon"
+                app:srcCompat="@drawable/ic_refresh" />
+
+            <Button
+                android:id="@+id/edit_profile_retry_btn"
+                style="@style/grayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginTop="4dp"
+                android:minWidth="136dp"
+                android:onClick="@{() -> viewModel.getCurrentUser(true)}"
+                android:text="@string/retry" />
+
+        </LinearLayout>
+
+        <!-- Loading -->
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/edit_profile_pd"
+            style="Widget.MaterialComponents.CircularProgressIndicator.ExtraSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            app:indicatorColor="?attr/darkGrayColor"
+            app:indicatorSize="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:trackThickness="1dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

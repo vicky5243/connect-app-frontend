@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="like"
+            type="com.connect.android.models.res.Like" />
+
+        <variable
+            name="clickListener"
+            type="com.connect.android.adapters.LikedByListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="@{() -> clickListener.onClick(like.likedBy)}"
+        android:orientation="horizontal"
+        android:padding="14dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_liked_by_civ"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            app:likedByProfilePhoto="@{like.likedBy}"
+            tools:src="@mipmap/ic_launcher_round" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_liked_by_username_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textColor="?attr/blackTextColor"
+                android:textSize="16sp"
+                app:likedByUsername="@{like.likedBy}"
+                tools:text="start3000" />
+
+            <TextView
+                android:id="@+id/item_liked_by_fullname_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textColor="?attr/veryDarkGrayColor"
+                android:textSize="14sp"
+                app:likedByFullname="@{like.likedBy}"
+                tools:text="Tony Stark" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

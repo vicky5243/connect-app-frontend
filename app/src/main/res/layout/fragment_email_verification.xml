@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.connect.android.ui.auth.verifyemail.EmailVerifyViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/whiteBgColor"
+        tools:context=".ui.auth.verifyemail.EmailVerificationFragment">
+
+        <LinearLayout
+            android:id="@+id/email_verify_container_ll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/email_verify_title_tv"
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:text="@string/enter_confirmation_code"
+                android:textAlignment="center"
+                android:textColor="?attr/blackTextColor"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/email_verify_sub_title_tv"
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="?attr/veryDarkGrayColor"
+                android:textSize="14sp"
+                tools:text="@{@string/enter_confirmation_format(viewModel.email)}" />
+
+            <TextView
+                android:id="@+id/email_verify_resend_code_tv"
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:onClick="@{() -> viewModel.resendConfirmationCode()}"
+                android:text="@string/resend_code"
+                android:textAlignment="center"
+                android:textColor="?attr/blueColor"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/email_verify_code_et"
+                style="@style/edit_text"
+                android:layout_width="292dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:hint="@string/confirmation_code"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="6"
+                android:text="@={viewModel.code}"
+                tools:ignore="TextFields" />
+
+            <RelativeLayout
+                android:id="@+id/email_verify_container_rl"
+                android:layout_width="292dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/progress_indicator_background">
+
+                <Button
+                    android:id="@+id/email_verify_btn"
+                    style="@style/blueButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:enabled="@{viewModel.isVerifyEmailNextBtnEnabled}"
+                    android:minWidth="292dp"
+                    android:onClick="@{() -> viewModel.verifyEmail()}"
+                    android:text="@string/next" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/email_verify_pd"
+                    style="Widget.MaterialComponents.CircularProgressIndicator.ExtraSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    app:indicatorColor="@color/white"
+                    app:indicatorSize="30dp"
+                    app:trackThickness="2dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

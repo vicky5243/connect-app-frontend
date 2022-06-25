@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2525" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable-v24/top_border.xml" value="0.1615" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/bottom_border.xml" value="0.199" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/bottom_navigation_selector.xml" value="0.175" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/button_active_background.xml" value="0.205" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/button_activity_background.xml" value="0.1785" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/button_background.xml" value="0.1615" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/button_disabled_background.xml" value="0.1785" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/button_enabled_background.xml" value="0.1785" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/button_selector.xml" value="0.1785" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/circle_image_placeholder.xml" value="0.1915" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/circular_edit_text_bg.xml" value="0.198" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/cursor_background.xml" value="0.1615" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/dialog_round_corner.xml" value="0.1785" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/edit_text_background.xml" value="0.1615" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/gray_button_active_bg.xml" value="0.199" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/gray_button_background.xml" value="0.199" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/gray_button_disabled_bg.xml" value="0.199" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/horizontal_bar.xml" value="0.1945" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_account.xml" value="0.1915" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_add_post.xml" value="0.199" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_app_logo.xml" value="0.2525" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_arrow_down.xml" value="0.1945" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_back.xml" value="0.199" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_back_cross.xml" value="0.2225" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_broken_image.xml" value="0.1915" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_cameraswitch.xml" value="0.1945" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_capture_photo.xml" value="0.1945" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_change_password.xml" value="0.1915" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_clear.xml" value="0.1915" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_comment.xml" value="0.2115" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_home.xml" value="0.1915" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1785" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_like.xml" value="0.2115" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_logout.xml" value="0.1915" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_photo_library.xml" value="0.1935" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_profile.xml" value="0.199" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_refresh.xml" value="0.199" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_save.xml" value="0.188" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_search.xml" value="0.2295" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_setting.xml" value="0.199" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_theme.xml" value="0.1915" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/ic_unlike.xml" value="0.235" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/loading_img.xml" value="0.1915" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/modal_bottom_sheet_bg.xml" value="0.1945" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/press_effect_background.xml" value="0.1785" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/profile_active_bg.xml" value="0.199" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/profile_bg_effect.xml" value="0.199" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/profile_disabled_bg.xml" value="0.199" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/progress_indicator_background.xml" value="0.1785" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/small_top_border.xml" value="0.1785" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/top_border.xml" value="0.1615" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/drawable/unpressed_top_border.xml" value="0.1785" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/font/logo_font_family.xml" value="0.29846153846153844" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/activity_auth.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/activity_launcher.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/activity_main.xml" value="0.24818840579710144" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/activity_pick_file.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/activity_signin.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/activity_signup.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/activity_splash.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/activity_welcome.xml" value="0.25" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/commented_by_item_layout.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/dialog_layout.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/dialog_loading_indicator_layout.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_account.xml" value="0.12552083333333333" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_camera.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_change_password.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_comment.xml" value="0.25" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_create_post.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_edit_profile.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_email_verification.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_follower.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_following.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_full_name_and_password.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_gallery.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_home.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_like.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_photo.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_pick_file.xml" value="0.18070652173913043" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_post.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_search.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_setting.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_settings.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_signin.xml" value="0.33" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_signup.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_theme.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/fragment_username.xml" value="0.25" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/gallery_image_item_layout.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/item_photo.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/item_search_user_layout.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/liked_by_item_layout.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/load_state_footer.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/modal_bottom_sheet_layout.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/newsfeed_item_layout.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/no_posts_layout.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/profile_post_item_layout.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/profile_toolbar_layout.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/layout/search_user_item_layout.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/menu/edit_profile_bar_menu.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/menu/main_bottom_navigation_menu.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/menu/profile_app_bar_menu.xml" value="0.27291666666666664" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.202" />
+        <entry key="..\:/programming/android/Connect/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.202" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

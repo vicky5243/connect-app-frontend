@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav_graph"
+    app:startDestination="@id/signinFragment">
+
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="com.connect.android.ui.auth.signin.SigninFragment"
+        android:label="fragment_signin"
+        tools:layout="@layout/fragment_signin">
+        <action
+            android:id="@+id/action_signinFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_signinFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2"
+            app:popUpTo="@id/signinFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.connect.android.ui.auth.signup.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signupFragment_to_emailVerificationFragment"
+            app:destination="@id/emailVerificationFragment"
+            app:popUpTo="@id/signinFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/customDialog"
+        android:name="com.connect.android.ui.dialog.CustomDialog"
+        android:label="CustomDialog">
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="message"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="isLogoutAction"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_customDialog_to_loadingIndicatorDialog2"
+            app:destination="@id/loadingIndicatorDialog2"
+            app:popUpTo="@id/customDialog"
+            app:popUpToInclusive="true" />
+    </dialog>
+    <action
+        android:id="@+id/action_global_customDialog"
+        app:destination="@id/customDialog" />
+    <fragment
+        android:id="@+id/emailVerificationFragment"
+        android:name="com.connect.android.ui.auth.verifyemail.EmailVerificationFragment"
+        android:label="fragment_email_verification"
+        tools:layout="@layout/fragment_email_verification">
+        <action
+            android:id="@+id/action_emailVerificationFragment_to_usernameFragment"
+            app:destination="@id/usernameFragment"
+            app:popUpTo="@id/signinFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/usernameFragment"
+        android:name="com.connect.android.ui.auth.username.UsernameFragment"
+        android:label="fragment_username"
+        tools:layout="@layout/fragment_username">
+        <action
+            android:id="@+id/action_usernameFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2"
+            app:popUpTo="@id/usernameFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.connect.android.ui.home.HomeFragment"
+        android:label="HomeFragment">
+        <argument
+            android:name="user"
+            android:defaultValue="@null"
+            app:argType="com.connect.android.models.res.User"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_homeFragment2_to_searchFragment2"
+            app:destination="@id/searchFragment2" />
+        <action
+            android:id="@+id/action_homeFragment2_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+        <action
+            android:id="@+id/action_homeFragment2_to_likeFragment"
+            app:destination="@id/likeFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_commentFragment"
+            app:destination="@id/commentFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/loadingIndicatorDialog2"
+        android:name="com.connect.android.ui.dialog.LoadingIndicatorDialog"
+        android:label="LoadingIndicatorDialog">
+        <argument
+            android:name="message"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_loadingIndicatorDialog2_to_signinFragment2"
+            app:destination="@id/signinFragment"
+            app:popUpTo="@id/homeFragment2"
+            app:popUpToInclusive="true" />
+    </dialog>
+    <fragment
+        android:id="@+id/searchFragment2"
+        android:name="com.connect.android.ui.search.SearchFragment"
+        android:label="SearchFragment">
+        <action
+            android:id="@+id/action_searchFragment2_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+        <argument
+            android:name="loggedInUserId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.connect.android.ui.profile.ProfileFragment"
+        android:label="ProfileFragment">
+        <argument
+            android:name="visitedUserId"
+            app:argType="long" />
+        <argument
+            android:name="loggedInUserId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_profileFragment2_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_profileFragment2_to_editProfileFragment"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_profileFragment2_to_postFragment"
+            app:destination="@id/postFragment" />
+        <action
+            android:id="@+id/action_profileFragment2_to_createPostFragment"
+            app:destination="@id/createPostFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/likeFragment"
+        android:name="com.connect.android.ui.home.like.LikeFragment"
+        android:label="LikeFragment">
+        <argument
+            android:name="pid"
+            app:argType="long" />
+        <argument
+            android:name="numLikes"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_likeFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+        <argument
+            android:name="loggedInUserId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentFragment"
+        android:name="com.connect.android.ui.home.comment.CommentFragment"
+        android:label="fragment_comment"
+        tools:layout="@layout/fragment_comment">
+        <argument
+            android:name="pid"
+            app:argType="long" />
+        <argument
+            android:name="numComments"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_commentFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+        <argument
+            android:name="loggedInUserId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.connect.android.ui.profile.settings.SettingsFragment"
+        android:label="SettingsFragment">
+        <action
+            android:id="@+id/action_settingsFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_settingsFragment_to_themeFragment"
+            app:destination="@id/themeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.connect.android.ui.profile.settings.changepassword.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" />
+    <fragment
+        android:id="@+id/themeFragment"
+        android:name="com.connect.android.ui.profile.settings.theme.ThemeFragment"
+        android:label="ThemeFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.connect.android.ui.profile.edit.EditProfileFragment"
+        android:label="EditProfileFragment" />
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.connect.android.ui.profile.post.PostFragment"
+        android:label="PostFragment">
+        <argument
+            android:name="visitedUserId"
+            app:argType="long" />
+        <argument
+            android:name="loggedInUserId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_postFragment_to_commentFragment"
+            app:destination="@id/commentFragment" />
+        <action
+            android:id="@+id/action_postFragment_to_likeFragment"
+            app:destination="@id/likeFragment" />
+        <action
+            android:id="@+id/action_postFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+        <argument
+            android:name="scrollToPos"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="numPosts"
+            android:defaultValue="0L"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPostFragment"
+        android:name="com.connect.android.ui.profile.createpost.CreatePostFragment"
+        android:label="CreatePostFragment" />
+</navigation>

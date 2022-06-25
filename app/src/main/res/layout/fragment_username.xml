@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.connect.android.ui.auth.username.UsernameViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/whiteBgColor"
+        tools:context=".ui.auth.username.UsernameFragment">
+
+        <LinearLayout
+            android:id="@+id/username_container_ll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/username_title_tv"
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@string/username"
+                android:textAlignment="center"
+                android:textColor="?attr/blackTextColor"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/username_sub_title_tv"
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="@string/pick_username"
+                android:textAlignment="center"
+                android:textColor="?attr/veryDarkGrayColor"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/username_et"
+                style="@style/edit_text"
+                android:layout_width="292dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:hint="@string/auth_username"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:text="@={viewModel.username}"
+                tools:ignore="TextFields" />
+
+            <EditText
+                android:id="@+id/username_password_et"
+                style="@style/edit_text"
+                android:layout_width="292dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:autofillHints="Password"
+                android:hint="@string/auth_password"
+                android:inputType="textPassword"
+                android:text="@={viewModel.password}" />
+
+            <RelativeLayout
+                android:id="@+id/username_container_rl"
+                android:layout_width="292dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/progress_indicator_background">
+
+                <Button
+                    android:id="@+id/username_signup_btn"
+                    style="@style/blueButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:enabled="@{viewModel.isSignUpBtnEnabled}"
+                    android:minWidth="292dp"
+                    android:onClick="@{() -> viewModel.createTheUserAccount()}"
+                    android:text="@string/next" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/username_pd"
+                    style="Widget.MaterialComponents.CircularProgressIndicator.ExtraSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    app:indicatorColor="@color/white"
+                    app:indicatorSize="30dp"
+                    app:trackThickness="2dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

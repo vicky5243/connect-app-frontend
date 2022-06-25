@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.connect.android.ui.auth.signin.SigninViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/whiteBgColor"
+        tools:context=".ui.auth.signin.SigninFragment">
+
+        <LinearLayout
+            android:id="@+id/signin_container_ll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/signin_container_ll_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/signin_logo_tv"
+                style="@style/app_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp" />
+
+            <EditText
+                android:id="@+id/signin_username_email_et"
+                style="@style/edit_text"
+                android:layout_width="292dp"
+                android:layout_height="48dp"
+                android:autofillHints="Username or Email"
+                android:hint="@string/auth_username_or_email"
+                android:inputType="textEmailAddress"
+                android:text="@={viewModel.username}" />
+
+            <EditText
+                android:id="@+id/signin_password_et"
+                style="@style/edit_text"
+                android:layout_width="292dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:autofillHints="Password"
+                android:hint="@string/auth_password"
+                android:inputType="textPassword"
+                android:text="@={viewModel.password}" />
+
+            <RelativeLayout
+                android:id="@+id/signin_container_rl"
+                android:layout_width="292dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/progress_indicator_background">
+
+                <Button
+                    android:id="@+id/signin_btn"
+                    style="@style/blueButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:minWidth="292dp"
+                    android:enabled="@{viewModel.isSignInBtnEnabled}"
+                    android:onClick="@{() -> viewModel.signInExistsAccount()}"
+                    android:text="@string/auth_login" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/signin_pd"
+                    style="Widget.MaterialComponents.CircularProgressIndicator.ExtraSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    app:indicatorColor="@color/white"
+                    app:indicatorSize="30dp"
+                    app:trackThickness="2dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/signin_container_ll_1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/top_border"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:onClick="@{() -> viewModel.navigateToSignUpFragment()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/signin_no_acc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/auth_no_ac"
+                android:textAlignment="center"
+                android:textColor="?attr/veryDarkGrayColor"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/signin_no_ac_tv_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/auth_sign_up"
+                android:textAlignment="center"
+                android:textColor="?attr/darkBlueColor"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.connect.android.ui.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile_container_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/whiteBgColor"
+        tools:context=".ui.profile.ProfileFragment">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/profile_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/profile_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical">
+
+                <!-- Main Content -->
+                <LinearLayout
+                    android:id="@+id/profile_container_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profile_toolbar">
+
+                    <!-- User details -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_image_civ"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            app:layout_constraintEnd_toStartOf="@id/profile_container_ll_1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:src="@mipmap/ic_launcher_round" />
+
+                        <LinearLayout
+                            android:id="@+id/profile_container_ll_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="@id/profile_image_civ"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/profile_image_civ"
+                            app:layout_constraintTop_toTopOf="@id/profile_image_civ">
+
+                            <TextView
+                                android:id="@+id/profile_fullname_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="?attr/blackTextColor"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                tools:text="vicky kumar" />
+
+                            <TextView
+                                android:id="@+id/profile_relationship_status_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="?attr/veryDarkGrayColor"
+                                android:textSize="16sp"
+                                tools:text="single" />
+
+                            <RelativeLayout
+                                android:id="@+id/profile_follow_container_rl"
+                                android:layout_width="132dp"
+                                android:layout_height="32dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/progress_indicator_background"
+                                android:visibility="visible">
+
+                                <Button
+                                    android:id="@+id/profile_follow_btn"
+                                    style="@style/blueButton"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:minWidth="136dp"
+                                    android:onClick="@{() -> viewModel.followTheUser()}"
+                                    android:padding="0dp" />
+
+                                <com.google.android.material.progressindicator.CircularProgressIndicator
+                                    android:id="@+id/profile_follow_pd"
+                                    style="Widget.MaterialComponents.CircularProgressIndicator.ExtraSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:indeterminate="true"
+                                    android:visibility="gone"
+                                    app:indicatorColor="@color/white"
+                                    app:indicatorSize="20dp"
+                                    app:trackThickness="2dp" />
+
+                            </RelativeLayout>
+
+                            <Button
+                                android:id="@+id/profile_edit_btn"
+                                style="@style/grayButton"
+                                android:layout_width="132dp"
+                                android:layout_height="32dp"
+                                android:layout_marginTop="8dp"
+                                android:minWidth="136dp"
+                                android:onClick="@{() -> viewModel.navigateToEditProfile()}"
+                                android:padding="0dp"
+                                android:text="@string/edit_profile"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Show Number of Posts, Followers and Following -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:baselineAligned="false"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:id="@+id/constraintLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/profile_bg_effect"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp">
+
+                            <TextView
+                                android:id="@+id/profile_num_followers_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAlignment="center"
+                                android:textColor="?attr/blackTextColor"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                tools:text="736" />
+
+                            <TextView
+                                android:id="@+id/profile_followers_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/followers"
+                                android:textAlignment="center"
+                                android:textColor="?attr/blackTextColor"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/constraintLayout2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/profile_bg_effect"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp">
+
+                            <TextView
+                                android:id="@+id/profile_num_posts_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAlignment="center"
+                                android:textColor="?attr/blackTextColor"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                tools:text="232" />
+
+                            <TextView
+                                android:id="@+id/profile_posts_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/posts"
+                                android:textAlignment="center"
+                                android:textColor="?attr/blackTextColor"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/constraintLayout3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/profile_bg_effect"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp">
+
+                            <TextView
+                                android:id="@+id/profile_num_following_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAlignment="center"
+                                android:textColor="?attr/blackTextColor"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                tools:text="342" />
+
+                            <TextView
+                                android:id="@+id/profile_following_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/following"
+                                android:textAlignment="center"
+                                android:textColor="?attr/blackTextColor"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/top_border"
+                    android:orientation="vertical"
+                    android:paddingTop="3dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/profile_posts_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false" />
+
+                    <LinearLayout
+                        android:id="@+id/profile_no_posts_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="36dp"
+                        android:background="?attr/whiteBgColor"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_posts"
+                            android:textAlignment="center"
+                            android:textColor="?attr/blackTextColor"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:paddingStart="36dp"
+                            android:paddingEnd="36dp"
+                            android:text="@string/profile_has_no_posts"
+                            android:textAlignment="center"
+                            android:textColor="?attr/veryDarkGrayColor"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- Retry Btn show -->
+        <LinearLayout
+            android:id="@+id/profile_container_ll_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/profile_refresh_iv"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:contentDescription="@string/refresh_image_icon"
+                app:srcCompat="@drawable/ic_refresh" />
+
+            <Button
+                android:id="@+id/profile_retry_btn"
+                style="@style/grayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginTop="4dp"
+                android:minWidth="136dp"
+                android:onClick="@{() -> viewModel.getVisitedProfileUserDetails(true)}"
+                android:text="@string/retry" />
+
+        </LinearLayout>
+
+        <!-- Loading -->
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/profile_pd"
+            style="Widget.MaterialComponents.CircularProgressIndicator.ExtraSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            app:indicatorColor="?attr/darkGrayColor"
+            app:indicatorSize="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:trackThickness="1dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

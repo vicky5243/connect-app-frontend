@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.connect.android.ui.auth.signup.SignupViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/whiteBgColor"
+        tools:context=".ui.auth.signup.SignupFragment">
+
+        <LinearLayout
+            android:id="@+id/signup_container_ll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/signup_container_ll_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/signup_logo_tv"
+                style="@style/app_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:id="@+id/signup_email_must_valid_tv"
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="@string/enter_valid_email_tv"
+                android:textAlignment="center"
+                android:textColor="?attr/veryDarkGrayColor"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/signup_email_et"
+                style="@style/edit_text"
+                android:layout_width="292dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:autofillHints="Email Address"
+                android:hint="@string/auth_email"
+                android:inputType="textEmailAddress"
+                android:text="@={viewModel.email}" />
+
+            <RelativeLayout
+                android:id="@+id/signup_container_rl"
+                android:layout_width="292dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/progress_indicator_background">
+
+                <Button
+                    android:id="@+id/signup_next_btn"
+                    style="@style/blueButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:enabled="@{viewModel.isSignupNextBtnEnabled}"
+                    android:minWidth="292dp"
+                    android:onClick="@{() -> viewModel.sendEmailVerificationCode()}"
+                    android:text="@string/next" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/signup_pd"
+                    style="Widget.MaterialComponents.CircularProgressIndicator.ExtraSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    app:indicatorColor="@color/white"
+                    app:indicatorSize="30dp"
+                    app:trackThickness="2dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/signup_container_ll_1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/top_border"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/signup_have_acc_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/auth_have_ac"
+                android:textAlignment="center"
+                android:textColor="?attr/veryDarkGrayColor"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/signup_have_ac_tv_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/auth_log_in"
+                android:textAlignment="center"
+                android:textColor="?attr/darkBlueColor"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
