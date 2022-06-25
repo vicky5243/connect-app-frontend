@@ -1,6 +1,3 @@
-# connect-app-frontend
-Connect is a social media application.
-
 # Connect Application
 ### This is a frontend of social media application.
 
